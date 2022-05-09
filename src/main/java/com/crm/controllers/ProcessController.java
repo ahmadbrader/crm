@@ -8,6 +8,7 @@ import com.crm.response.ResponseProcess;
 import com.crm.services.ProcessService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,7 @@ public class ProcessController {
     @Autowired
     private ProcessService service;
     
+    @CrossOrigin
     @GetMapping("/{process}")
     public List<ResponseProcess> getContactProcess(@PathVariable int process) {
         return service.contactProcess(process);

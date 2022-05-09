@@ -15,6 +15,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name="users")
 public class User implements UserDetails{
@@ -37,7 +40,6 @@ public class User implements UserDetails{
 
     public User() {
     }
-
 
     public User(Long id, Long id_company, String name, String email, String mobile_phone, String email_verified_at,
             String password, String role, Long id_parent, String remember_token, String api_token, Date created_at,

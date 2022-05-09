@@ -3,6 +3,7 @@ import java.util.List;
 
 import com.crm.models.entities.Product;
 import com.crm.models.entities.Status;
+import com.crm.models.entities.User;
 import com.crm.response.ResponseProcess;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -17,4 +18,7 @@ public interface BatisRepo {
 
     @Select("select * from products where id_contact=#{type}")
     List<Product> findProductByIdContact(String id);
+
+    @Select("select * from users where email=#{email}")
+    User findUserByEmail(String email);
 }

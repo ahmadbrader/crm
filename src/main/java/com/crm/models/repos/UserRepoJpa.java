@@ -6,8 +6,9 @@ import com.crm.models.entities.User;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.security.core.userdetails.UserDetails;
 
-public interface UserRepoJpa extends PagingAndSortingRepository<User, Long>{
+public interface UserRepoJpa extends CrudRepository<User, Long>{
     
-    Optional<User> findByEmail(String email);
+    User findByEmail(String email);
 }
