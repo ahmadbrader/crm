@@ -20,4 +20,9 @@ public class UserController {
     public Iterable<User> getContactProcess() {
         return service.getAll();
     }
+
+    @PostMapping("register")
+    public User register(@RequestBody User user) {
+        return service.register(user);
+    }
 }
