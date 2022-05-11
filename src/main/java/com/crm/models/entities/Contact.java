@@ -17,6 +17,7 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String id_sales;
+    private String id_company;
     private String id_contact_type;
     private String id_status;
     @Column(columnDefinition="text")
@@ -51,13 +52,16 @@ public class Contact {
     public Contact() {
     }
 
-    public Contact(String id_sales, String id_contact_type, String id_status, String product_temp, String value_temp,
-            String type_of_prospect, String flag, String company_contact, String title_contact, String name_contact,
-            String birth_contact, String office_phone_contact, String mobile_phone_contact, String notes_contact,
-            String extension_contact, String email_contact, String job_contact, String address_contact,
-            String id_revert, String task_prospecting, Date date_prospecting, String task_approaching,
-            Date date_approaching, Date date_presentation, Date date_status, Date created_at, Date updated_at) {
+    public Contact(Long id, String id_sales, String id_company, String id_contact_type, String id_status,
+            String product_temp, String value_temp, String type_of_prospect, String flag, String company_contact,
+            String title_contact, String name_contact, String birth_contact, String office_phone_contact,
+            String mobile_phone_contact, String notes_contact, String extension_contact, String email_contact,
+            String job_contact, String address_contact, String id_revert, String task_prospecting,
+            Date date_prospecting, String task_approaching, Date date_approaching, Date date_presentation,
+            Date date_status, Date created_at, Date updated_at) {
+        this.id = id;
         this.id_sales = id_sales;
+        this.id_company = id_company;
         this.id_contact_type = id_contact_type;
         this.id_status = id_status;
         this.product_temp = product_temp;
@@ -86,7 +90,13 @@ public class Contact {
         this.updated_at = updated_at;
     }
 
-    
+    public String getId_company() {
+        return id_company;
+    }
+
+    public void setId_company(String id_company) {
+        this.id_company = id_company;
+    }
 
     public Date getDate_presentation() {
         return date_presentation;
