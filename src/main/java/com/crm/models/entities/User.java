@@ -31,7 +31,6 @@ public class User implements UserDetails{
     private String email_verified_at;
     private String password;
     private String role;
-    private Long id_parent;
     private String remember_token;
     private String api_token;
     private Date created_at;
@@ -41,9 +40,9 @@ public class User implements UserDetails{
     public User() {
     }
 
+   
     public User(Long id, Long id_company, String name, String email, String mobile_phone, String email_verified_at,
-            String password, String role, Long id_parent, String remember_token, String api_token, Date created_at,
-            Date updated_at) {
+            String password, String role, String remember_token, String api_token, Date created_at, Date updated_at) {
         this.id = id;
         this.id_company = id_company;
         this.name = name;
@@ -52,7 +51,6 @@ public class User implements UserDetails{
         this.email_verified_at = email_verified_at;
         this.password = password;
         this.role = role;
-        this.id_parent = id_parent;
         this.remember_token = remember_token;
         this.api_token = api_token;
         this.created_at = created_at;
@@ -132,17 +130,6 @@ public class User implements UserDetails{
     public void setRole(String role) {
         this.role = role;
     }
-
-
-    public Long getId_parent() {
-        return id_parent;
-    }
-
-
-    public void setId_parent(Long id_parent) {
-        this.id_parent = id_parent;
-    }
-
 
     public String getRemember_token() {
         return remember_token;

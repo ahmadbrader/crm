@@ -27,6 +27,7 @@ public class ResponseProcess {
     private Date updated_at;
     private String name_user;
     private Long id_company;
+    private String name_company;
     private Long id_parent;
     private String task_prospecting;
     private Date date_prospecting;
@@ -46,8 +47,8 @@ public class ResponseProcess {
             String name_contact, String birth_contact, String office_phone_contact, String mobile_phone_contact,
             String notes_contact, String extension_contact, String email_contact, String job_contact,
             String address_contact, String id_revert, Date created_at, Date updated_at, String name_user,
-            Long id_company, Long id_parent, String task_prospecting, Date date_prospecting, String task_approaching,
-            Date date_approaching, Date date_status, String name_status) {
+            Long id_company, String name_company, Long id_parent, String task_prospecting, Date date_prospecting,
+            String task_approaching, Date date_approaching, Date date_status, String name_status) {
         this.id = id;
         this.id_sales = id_sales;
         this.id_contact_type = id_contact_type;
@@ -72,6 +73,7 @@ public class ResponseProcess {
         this.updated_at = updated_at;
         this.name_user = name_user;
         this.id_company = id_company;
+        this.name_company = name_company;
         this.id_parent = id_parent;
         this.task_prospecting = task_prospecting;
         this.date_prospecting = date_prospecting;
@@ -79,6 +81,15 @@ public class ResponseProcess {
         this.date_approaching = date_approaching;
         this.date_status = date_status;
         this.name_status = name_status;
+    }
+
+
+    public String getName_company() {
+        return name_company;
+    }
+
+    public void setName_company(String name_company) {
+        this.name_company = name_company;
     }
 
     public Date getDate_status() {

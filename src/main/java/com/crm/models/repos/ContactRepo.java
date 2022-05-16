@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface ContactRepo {
 
-    @Select("SELECT contacts.* , status.name_status, users.name as name_user, users.id_parent, users.id_company, companies.name_company FROM contacts INNER JOIN users ON (contacts.id_sales = users.id) INNER JOIN companies ON (users.id_company = companies.id) INNER JOIN status ON (contacts.id_status = status.id) where contacts.id_contact_type = #{process}")
+    @Select("SELECT contacts.* , status.name_status, users.name as name_user, companies.name_company FROM contacts INNER JOIN users ON (contacts.id_sales = users.id) INNER JOIN companies ON (contacts.id_company = companies.id) INNER JOIN status ON (contacts.id_status = status.id) where contacts.id_contact_type = #{process}")
     List<ResponseProcess> contactProcess(int process);
     
     @Update("update contacts set id_contact_type=2, id_status=5, task_prospecting=#{task_prospecting}, date_prospecting=#{date_prospecting}, mobile_phone_contact=#{mobile_phone_contact} where id=#{id}")
