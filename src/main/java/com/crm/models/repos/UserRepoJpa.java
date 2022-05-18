@@ -11,4 +11,5 @@ import org.springframework.security.core.userdetails.UserDetails;
 public interface UserRepoJpa extends CrudRepository<User, Long>{
     
     User findByEmail(String email);
+    User findOneById(Long id);
 }

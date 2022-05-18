@@ -1,11 +1,14 @@
 package com.crm.services;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
+import com.crm.models.entities.NotesHistory;
 import com.crm.models.entities.Product;
 import com.crm.models.repos.ContactRepo;
+import com.crm.models.repos.NotesJpa;
 import com.crm.models.repos.ProductJpa;
 import com.crm.request.AddProduct;
 import com.crm.request.UpdateStatus;
@@ -24,6 +27,9 @@ public class ProcessService {
     @Autowired
     private ProductJpa productJpa;
 
+    @Autowired
+    private NotesJpa noteJpa;
+
     public List<ResponseProcess> contactProcess(int process) {
         return contactRepo.contactProcess(process);
     }
@@ -41,8 +47,18 @@ public class ProcessService {
 
     public int changeStatus(String id, UpdateStatus form) {
         form.setId(id);
-        if (form.getId_status().equals("9")) {
-            return contactRepo.updateAppToPro(form);
+        String arr[] = { "4", "9", "15", "19", "21" };
+        long l=Long.parseLong(id);  
+        NotesHistory historyNote = new NotesHistory();
+        historyNote.setNotes(form.getNotes());
+        historyNote.setCreated_at(new Date());
+        historyNote.setContact_id(l);
+        noteJpa.save(historyNote);
+        for (String element : arr) {
+            if (form.getId_status().equals(element)) {
+                return contactRepo.updateAppToPro(form);
+            }
+            
         }
         return contactRepo.changeStatus(form);
     }
