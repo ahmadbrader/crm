@@ -29,6 +29,7 @@ public class Contact {
     private String company_contact;
     private String title_contact;
     private String name_contact;
+    private String position;
     private String birth_contact;
     private String office_phone_contact;
     private String mobile_phone_contact;
@@ -54,9 +55,9 @@ public class Contact {
 
     public Contact(Long id, String id_sales, String id_company, String id_contact_type, String id_status,
             String product_temp, String value_temp, String type_of_prospect, String flag, String company_contact,
-            String title_contact, String name_contact, String birth_contact, String office_phone_contact,
-            String mobile_phone_contact, String notes_contact, String extension_contact, String email_contact,
-            String job_contact, String address_contact, String id_revert, String task_prospecting,
+            String title_contact, String name_contact, String position, String birth_contact,
+            String office_phone_contact, String mobile_phone_contact, String notes_contact, String extension_contact,
+            String email_contact, String job_contact, String address_contact, String id_revert, String task_prospecting,
             Date date_prospecting, String task_approaching, Date date_approaching, Date date_presentation,
             Date date_status, Date created_at, Date updated_at) {
         this.id = id;
@@ -71,6 +72,7 @@ public class Contact {
         this.company_contact = company_contact;
         this.title_contact = title_contact;
         this.name_contact = name_contact;
+        this.position = position;
         this.birth_contact = birth_contact;
         this.office_phone_contact = office_phone_contact;
         this.mobile_phone_contact = mobile_phone_contact;
@@ -88,6 +90,14 @@ public class Contact {
         this.date_status = date_status;
         this.created_at = created_at;
         this.updated_at = updated_at;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getId_company() {

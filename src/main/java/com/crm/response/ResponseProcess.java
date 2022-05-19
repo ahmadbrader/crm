@@ -35,20 +35,21 @@ public class ResponseProcess {
     private Date date_approaching;
     private Date date_status;
     private String name_status;
+    private String position;
 
     
 
 
     public ResponseProcess() {
     }
- 
+
     public ResponseProcess(Long id, String id_sales, String id_contact_type, String id_status, String product_temp,
             String value_temp, String type_of_prospect, String flag, String company_contact, String title_contact,
             String name_contact, String birth_contact, String office_phone_contact, String mobile_phone_contact,
             String notes_contact, String extension_contact, String email_contact, String job_contact,
             String address_contact, String id_revert, Date created_at, Date updated_at, String name_user,
             Long id_company, String name_company, Long id_parent, String task_prospecting, Date date_prospecting,
-            String task_approaching, Date date_approaching, Date date_status, String name_status) {
+            String task_approaching, Date date_approaching, Date date_status, String name_status, String position) {
         this.id = id;
         this.id_sales = id_sales;
         this.id_contact_type = id_contact_type;
@@ -81,8 +82,18 @@ public class ResponseProcess {
         this.date_approaching = date_approaching;
         this.date_status = date_status;
         this.name_status = name_status;
+        this.position = position;
     }
 
+
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
 
     public String getName_company() {
         return name_company;
